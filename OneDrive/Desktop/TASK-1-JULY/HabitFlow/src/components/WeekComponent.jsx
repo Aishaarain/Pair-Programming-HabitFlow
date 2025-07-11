@@ -59,7 +59,7 @@ export default function WeekComponent() {
       />
 
       {/* Table inside styled box */}
-      <div className="ring-1 ring-gray-200 rounded-lg overflow-x-auto mt-4">
+      <div className="ring-1 ring-gray-200 rounded-lg overflow-x-auto mt-4 text-teal-900 bg-white">
         <table className="min-w-full text-sm">
           <thead className="bg-white">
             <tr className="[&>th]:py-3 [&>th]:px-4 [&>th]:font-medium">

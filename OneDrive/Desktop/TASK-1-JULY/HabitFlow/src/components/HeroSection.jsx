@@ -2,15 +2,15 @@
 import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className=" bg-white text-gray-900">
       {/* Navbar */}
       
 
       {/* Hero */}
-      <section className="text-center px-6 md:px-0 py-24">
+      <section className="text-center px-6 md:px-0 py-24 dark:bg-teal-900 dark:text-white">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           Stay on Track,
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-green-500 to-yellow-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-green-500 to-yellow-500 ">
             {" "}Stay in Flow.
           </span>
         </h1>

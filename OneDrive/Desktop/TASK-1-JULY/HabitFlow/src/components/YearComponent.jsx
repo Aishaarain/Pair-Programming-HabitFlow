@@ -44,7 +44,7 @@ export default function YearComponent() {
             className="inline-block h-4 w-4 rounded-full"
             style={{ backgroundColor: habit.color }}
           ></span>
-          <span className="text-gray-800 font-medium text-base flex-1">
+          <span className="text-gray-800 font-medium text-base flex-1 dark:text-white">
             {habit.title}
           </span>
           <span className="text-gray-700 font-semibold text-sm">

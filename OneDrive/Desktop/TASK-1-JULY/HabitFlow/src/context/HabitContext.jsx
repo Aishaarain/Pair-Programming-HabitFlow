@@ -1,10 +1,45 @@
 // File: src/context/HabitContext.jsx
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect,useMemo } from "react";
 
 export const HabitContext = createContext();
 
 const HabitProvider = ({ children }) => {
   const [habits, setHabits] = useState([]);
+   const [quote, setQuote] = useState('');
+    const [author, setAuthor] = useState('');
+  
+ const chartData = useMemo(() => {
+    const dateMap = {};
+
+    habits.forEach((habit) => {
+      Object.entries(habit.progress || {}).forEach(([date, done]) => {
+        if (!dateMap[date]) {
+          dateMap[date] = { date, completed: 0, total: 0 };
+        }
+        dateMap[date].total += 1; 
+        if (done) dateMap[date].completed += 1;
+      });
+    });
+
+ 
+
+    return Object.values(dateMap).sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+    );
+  }, [habits]);
+
+  
+   useEffect(() => {
+  fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://zenquotes.io/api/today'))
+    .then((res) => res.json())
+    .then((data) => {
+      const parsed = JSON.parse(data.contents);
+      setQuote(parsed[0].q);
+      setAuthor(parsed[0].a);
+    })
+    .catch((err) => console.error('Failed to fetch quote:', err));
+}, []);
+
 
   const [bedtime, setBedtime] = useState(null); // e.g. "22:30"
   useEffect(() => {
@@ -55,6 +90,9 @@ const HabitProvider = ({ children }) => {
         getTimeUntilBedtime,
         bedtime,
         setBedtime,
+        quote,
+        author,
+        chartData
       }}
     >
       {children}

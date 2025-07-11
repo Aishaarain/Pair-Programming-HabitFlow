@@ -77,7 +77,7 @@ export default function MonthlyCalendar() {
         onNext={nextMonth}
       />
 
-      <div className="grid grid-cols-7 gap-px border border-blue-100 text-center text-sm text-blue-600 select-none mt-4">
+      <div className="grid grid-cols-7 gap-px border border-blue-100 text-center text-sm text-teal-900 dark:text-white select-none mt-4">
         {/* Headers */}
         {daysOfWeek.map((d) => (
           <div key={d} className="py-2 font-semibold border border-blue-100">
@@ -96,7 +96,7 @@ export default function MonthlyCalendar() {
             {cell ? (
               <div className="flex flex-col items-center justify-between h-full py-1">
                 <div>{cell.day}</div>
-                <div className="text-xs font-semibold text-blue-600 mt-auto">
+                <div className="text-xs font-semibold text-blue-900 dark:text-blue-200 mt-auto">
                   {cell.progress}
                 </div>
               </div>

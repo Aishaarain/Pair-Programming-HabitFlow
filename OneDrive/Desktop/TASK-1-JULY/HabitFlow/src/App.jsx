@@ -18,5 +18,18 @@ const App = () => {
     </HabitProvider>
   );
 };
+    // <>
+   {/* <div className='dark:bg-teal-900 dark:text-white'>
+<Navbar />
+<div className='dark:bg-teal-900 dark:text-white'>
+  <Routes>
+    <Route path="/" element={<Home />} />
+   <Route path='/Addhabits' element={<Addhabits/>}/>
+  </Routes>
+  </div>
+  </div>
+  </> */}
+  {/* )
+} */}
 
 export default App;

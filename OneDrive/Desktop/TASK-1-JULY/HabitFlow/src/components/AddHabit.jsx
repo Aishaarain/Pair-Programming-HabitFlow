@@ -9,7 +9,7 @@ export default function AddHabit() {
     <div>
       <button
         onClick={() => setModalOpen(true)}
-        className="mt-4 mb-2 bg-blue-800 text-white px-2 md:px-10 py-2 hover:bg-blue-700 rounded shadow hover:scale-105 transition all"
+        className="mt-4 mb-2 bg-teal-900 text-white px-2 md:px-10 py-2 hover:bg-teal-700 rounded shadow hover:scale-105 transition all "
       >
         + Add Habit
       </button>
